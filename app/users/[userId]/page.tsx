@@ -1,5 +1,6 @@
 'use client';
 import Header from '@/components/Header';
+import PostFeed from '@/components/posts/PostFeed';
 import UserBio from '@/components/users/UserBio';
 import UserHero from '@/components/users/UserHero';
 import useUser from '@/hooks/useUser';
@@ -25,6 +26,7 @@ const UserView = () => {
       <Header label={fetchedUser?.name} showBackArrow />
       <UserHero userId={userId} />
       <UserBio userId={userId} />
+      <PostFeed userId={userId} />
     </>
   );
 };
