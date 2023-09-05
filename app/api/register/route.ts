@@ -1,14 +1,9 @@
 import bcrypt from 'bcrypt';
-import { NextApiRequest, NextApiResponse } from 'next';
 import { NextResponse } from 'next/server';
 
 import prisma from '@/libs/prismadb';
 
-export async function POST(req: Request, res: NextApiResponse) {
-  if (req.method !== 'POST') {
-    return res.status(405).end();
-  }
-
+export async function POST(req: Request) {
   try {
     const { email, username, name, password } = await req.json();
 
@@ -27,6 +22,6 @@ export async function POST(req: Request, res: NextApiResponse) {
     return NextResponse.json(user);
   } catch (error) {
     console.log(error);
-    return res.status(400).end();
+    return new NextResponse('[REGISTER_INTERNAL_ERROR]', { status: 500 });
   }
 }
