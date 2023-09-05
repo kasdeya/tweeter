@@ -24,7 +24,7 @@ const Header = ({ label, showBackArrow }: HeaderProps) => {
             onClick={handleBack}
             color="white"
             size={20}
-            className="cursor-pointing hover:oipacity-70 transition"
+            className="cursor-pointer hover:oipacity-70 transition"
           />
         )}
         <h1 className="text-white text-xl font-semibold">{label}</h1>

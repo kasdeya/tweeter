@@ -15,7 +15,7 @@ const FollowBar = () => {
         <h2 className="text-white text-xl font-semibold">Who to follow</h2>
         <div className="flex flex-col gap-6 mt-4"></div>
         {users.map((user: Record<string, any>) => (
-          <div className="flex flex-row gap-4" key={user.id}>
+          <div className="flex flex-row gap-4 mb-2" key={user.id}>
             <Avatar userId={user.id} />
             <div className="flex flex-col">
               <p className="text-white font-semibold text-sm">{user.name}</p>
