@@ -5,7 +5,6 @@ import { authOptions } from './auth';
 
 const serverAuth = async () => {
   const session = await getServerSession(authOptions);
-  console.log('[SERVER_AUTH]Session:', session);
 
   if (!session?.user?.email) {
     throw new Error('Not signed in');

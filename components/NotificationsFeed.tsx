@@ -9,8 +9,10 @@ const NotificationsFeed = () => {
   const { data: fetchedNotifications = [] } = useNotifications(currentUser?.id);
 
   useEffect(() => {
-    mutateCurrentUser();
-  }, [mutateCurrentUser]);
+    if (currentUser) {
+      mutateCurrentUser();
+    }
+  }, [mutateCurrentUser, currentUser]);
 
   if (fetchedNotifications.length === 0) {
     return (
