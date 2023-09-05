@@ -8,6 +8,7 @@ import { SessionProvider } from 'next-auth/react';
 import { NextAuthProvider } from './providers';
 import Sidebar from '@/components/layout/Sidebar';
 import FollowBar from '@/components/layout/FollowBar';
+import EditModal from '@/components/modals/EditModal';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -23,8 +24,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
+      <body className={inter.className} suppressHydrationWarning>
         <NextAuthProvider>
+          <EditModal />
           <RegisterModal />
           <LoginModal />
           <div className="h-screen bg-black">
